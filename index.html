@@ -1,28 +1,43 @@
-<script>
-  const images = [
-    {
-      title: "Beautiful Sunset",
-      prompt: "A beautiful sunset over a calm ocean, with vibrant orange and pink hues.",
-      url: "https://via.placeholder.com/300x200"
-    },
-    {
-      title: "Futuristic Cityscape",
-      prompt: "A futuristic cityscape with glowing neon lights and flying cars.",
-      url: "https://via.placeholder.com/300x200"
-    }
-  ];
+<body>
+    <header class="navbar">
+        <a href="#">AI Image Library</a>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Categories</a>
+            <a href="#">Upload</a>
+        </nav>
+    </header>
 
-  const grid = document.querySelector('.grid');
-  images.forEach(image => {
-    const card = document.createElement('div');
-    card.classList.add('card');
-    card.innerHTML = `
-      <img src="${image.url}" alt="${image.title}">
-      <div class="card-content">
-        <h3>${image.title}</h3>
-        <p>Prompt: ${image.prompt}</p>
-      </div>
-    `;
-    grid.appendChild(card);
-  });
-</script>
+    <main class="grid">
+        <!-- Dynamic content will be inserted here -->
+    </main>
+
+    <script>
+        const images = [
+            {
+                title: "Beautiful Sunset",
+                prompt: "A beautiful sunset over a calm ocean, with vibrant orange and pink hues.",
+                url: "https://via.placeholder.com/300x200"
+            },
+            {
+                title: "Futuristic Cityscape",
+                prompt: "A futuristic cityscape with glowing neon lights and flying cars.",
+                url: "https://via.placeholder.com/300x200"
+            }
+        ];
+
+        const grid = document.querySelector('.grid');
+        images.forEach(image => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.innerHTML = `
+                <img src="${image.url}" alt="${image.title}">
+                <div class="card-content">
+                    <h3>${image.title}</h3>
+                    <p>Prompt: ${image.prompt}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    </script>
+</body>
