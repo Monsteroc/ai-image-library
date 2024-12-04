@@ -1,119 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Image Library</title>
-    <style>
-        body {
-            font-family: barlow;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
+<script>
+  const images = [
+    {
+      title: "Beautiful Sunset",
+      prompt: "A beautiful sunset over a calm ocean, with vibrant orange and pink hues.",
+      url: "https://via.placeholder.com/300x200"
+    },
+    {
+      title: "Futuristic Cityscape",
+      prompt: "A futuristic cityscape with glowing neon lights and flying cars.",
+      url: "https://via.placeholder.com/300x200"
+    }
+  ];
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .navbar a {
-            text-decoration: none;
-            color: #333;
-            font-size: 1.2rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1rem;
-            padding: 2rem;
-        }
-
-        .card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: scale(1.03);
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 1rem;
-        }
-
-        .card-content h3 {
-            margin: 0 0 0.5rem;
-            font-size: 1.5rem;
-        }
-
-        .card-content p {
-            margin: 0;
-            color: #666;
-            font-size: 1rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background-color: #fff;
-            border-top: 1px solid #ddd;
-        }
-    </style>
-</head>
-<body>
-    <header class="navbar">
-        <a href="#">AI Image Library</a>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Categories</a>
-            <a href="#">Upload</a>
-        </nav>
-    </header>
-
-    <main class="grid">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="AI Generated Image">
-            <div class="card-content">
-                <h3>Image Title</h3>
-                <p>Prompt: A beautiful sunset over a calm ocean, with vibrant orange and pink hues.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="AI Generated Image">
-            <div class="card-content">
-                <h3>Image Title</h3>
-                <p>Prompt: A futuristic cityscape with glowing neon lights and flying cars.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="AI Generated Image">
-            <div class="card-content">
-                <h3>Image Title</h3>
-                <p>Prompt: A dense forest with sunlight filtering through the tall trees.</p>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        &copy; 2024 AI Image Library. All rights reserved.
-    </footer>
-</body>
-</html>
+  const grid = document.querySelector('.grid');
+  images.forEach(image => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.innerHTML = `
+      <img src="${image.url}" alt="${image.title}">
+      <div class="card-content">
+        <h3>${image.title}</h3>
+        <p>Prompt: ${image.prompt}</p>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+</script>
